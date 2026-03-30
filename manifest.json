@@ -1,0 +1,10 @@
+{
+  "name": "linkedin-profile",
+  "description": "Scrapes LinkedIn profiles using the Apify dev_fusion/Linkedin-Profile-Scraper actor and returns structured JSON with work history, education, skills, and contact info.",
+  "config": {
+    "apify_api_key": {
+      "description": "Your Apify API token. Find it at https://console.apify.com/settings/integrations",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "scrape_linkedin_profile",
+  "description": "Scrapes one or more LinkedIn profiles and returns structured JSON data including work history, education, skills, and contact information.",
+  "entrypoint": "run.py",
+  "async": true,
+  "parameters": {
+    "profile_urls": {
+      "type": "array",
+      "description": "List of LinkedIn profile URLs to scrape (e.g. [\"https://www.linkedin.com/in/username/\"])"
+    }
+  }
+}
