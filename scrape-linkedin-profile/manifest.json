@@ -5,8 +5,8 @@
   "async": true,
   "parameters": {
     "profile_urls": {
-      "type": "array",
-      "description": "List of LinkedIn profile URLs to scrape (e.g. [\"https://www.linkedin.com/in/username/\"])"
+      "type": "string",
+      "description": "JSON array of LinkedIn profile URLs to scrape, e.g. [\"https://www.linkedin.com/in/username/\"]. A single URL string is also accepted."
     }
   }
 }

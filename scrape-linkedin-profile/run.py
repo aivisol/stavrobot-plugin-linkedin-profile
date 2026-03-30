@@ -16,7 +16,19 @@ MAX_WAIT = 280     # seconds — stay under the 5-minute async timeout
 
 def main():
     input_data = json.loads(sys.stdin.read())
-    profile_urls = input_data.get("profile_urls", [])
+    raw = input_data.get("profile_urls", "")
+
+    # Accept either a JSON array string or a single URL string
+    if isinstance(raw, list):
+        profile_urls = raw
+    else:
+        raw = raw.strip()
+        try:
+            profile_urls = json.loads(raw)
+            if not isinstance(profile_urls, list):
+                profile_urls = [raw]
+        except (json.JSONDecodeError, ValueError):
+            profile_urls = [raw] if raw else []
 
     if not profile_urls:
         print(json.dumps({"error": "profile_urls is required and must not be empty"}))
